@@ -1,0 +1,27 @@
+      map<int,int> mp;
+
+        vector<long long int> ans;
+
+    for(int i=0;i<n;i++)
+
+    {
+
+        mp[arr[i]]++;
+
+    }
+
+    for(auto ele:mp)
+
+    {
+     
+      if( ele.second %2 != 0 )
+
+        ans.push_back(ele.first);
+
+    }
+
+    sort(ans.begin(),ans.end());
+
+    reverse(ans.begin(),ans.end());
+
+    return ans;
