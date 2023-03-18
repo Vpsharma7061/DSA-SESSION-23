@@ -1,0 +1,19 @@
+    int ved(Node* root , int *result){
+        int ans=0;
+        if(root==NULL){
+            return 0;
+        }
+        int x=ved(root->left, result);
+        int y=ved(root->right,result);
+        if(x+y+1 > *result)
+        *result=x+y+1;
+        return 1+max(x,y);
+    }
+    // Function to return the diameter of a Binary Tree.
+    int diameter(Node* root) {
+        // Your code here
+        int result=0;
+        ved(root,&result);
+        return result;
+        
+    }
