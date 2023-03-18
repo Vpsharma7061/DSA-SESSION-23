@@ -1,0 +1,18 @@
+   void height(struct Node*node,int &ans){
+        if(node==NULL){
+            ans=0;
+        }
+        else{
+            int lh=height(node->left);
+            int rh=height(node->right);
+            ans=max(lh,rh)+1;
+        }
+        
+    }
+    //Function to find the height of a binary tree.
+    int height(struct Node* node){
+        // code here 
+        int ans;
+        height(node,ans);
+        return ans;
+    }
