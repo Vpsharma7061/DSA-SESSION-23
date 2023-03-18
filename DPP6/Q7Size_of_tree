@@ -1,0 +1,18 @@
+    void getSize(Node* node,int &result){
+        if(node==NULL){
+            return;
+        }
+        else{
+            int ls=getSize(node->left);
+            int rs=getSize(node->right);
+            result=(ls+rs)+1;
+        }
+    }
+
+/* Computes the number of nodes in a tree. */
+int getSize(Node* node)
+{
+   // Your code here
+   int result=0;
+   getSize(node,result);
+   return result;
